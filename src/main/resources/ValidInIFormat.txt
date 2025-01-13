@@ -1,0 +1,26 @@
+------Valid Ini File format--------
+
+1.	Valid Characters for Key:
+	1.1.	Key should only contain valid ASCII values.
+	1.2.	Key can be alpha numeric string
+	1.3.	Special chars in Key are restricted to $ , - (hyphen) , _ (underscore) , @ 
+	1.4.	The parser will throw “UnsupportedCharacterInKey” exception if the naming convention is not followed.
+	1.5.	A key should be followed by = (equals) symbol. Any number of space chars between the key and equals symbol is ignored by the parser.
+	1.6.	Key can’t contain any escape characters, if found parser will throw “UnsupportedEscapeCharsInKey” exception.
+
+2.	Valid Characters for Value:
+	2.1.	Value cannot contain characters ; (semi colon), # (hashtag), =(equals) 
+	2.2.	Apart from restricted chars Value can take alphabets, numeric and following special characters !, @, $, %, ^, &, *,\, /,|, (, ), .(period) .
+	2.3.	The parser will throw “UnsupportedCharacterInValue” exception if the naming convention is not followed.
+	2.4.	Value with white spaces must be enclosed in double quotes “ “. Dangling quotes will cause the parser to throw “DanglingQuotesInValue” exception.
+	2.5.	Value can’t contain any escape chars, if found parser will throw “UnsupportedEscapeCharsInKey” exception.
+
+3.	Valid Characters for Comments:
+	3.1.	A comment line can start with either ; (semi colon) or  # (hashtag).
+	3.2.	All the character details inside the comment statements are ignored by the parser.
+
+4.	Valid Key - Value pair expression:
+	4.1.	A valid Key – Value expression must consist of valid Key and Value literals.
+	4.2.	A Key Value pair is made using single = (equals) character.
+	4.3.	Occurrence of multiple or no = character will result in “InvalidKeyValueExpression” exception.
+	4.4.	Each expression must be written in separate line, else “InvalidKeyValueExpression” exception is thrown.   
